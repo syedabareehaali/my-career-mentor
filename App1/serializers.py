@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
+from .models import Score
 
 # # User Serializer
 class UserSerializer(serializers.ModelSerializer):
@@ -16,3 +17,9 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         return User.objects.create_user(validated_data['username'], validated_data['email'], validated_data['password'])
+
+
+class ScoreSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Score
+        fields = '__all__'
