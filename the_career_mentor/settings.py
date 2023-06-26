@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import mysql.connector as cn
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -54,7 +55,6 @@ CORS_ORIGIN_WHITELIST = [
 ]
 
 
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -89,14 +89,39 @@ TEMPLATES = [
 WSGI_APPLICATION = 'the_career_mentor.wsgi.application'
 
 
+# obj = cn.connect (
+#     host  = 'localhost',
+#     user = 'root',
+#     password = 'starbareeha123',
+#     database= 'db_tcm'
+# )
+
+# cr = obj.cursor()
+
+# sql="insert into user_login_info (username,password,email) values ('Sbareeha','star123','sybareeha')"
+# cr.execute(sql)
+# obj.commit()
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+    'default': 
+    {
+      'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        ###########################
+        #Up till now Want to use mysql but facing installment 
+        #issues in mysqlclient due to missing .h files
+        ###########################
+    #     'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'db_tcm',
+    #     'USER': 'root',
+    #     'PASSWORD': 'starbareeha123',
+    #     'HOST':'localhost',
+    #     'PORT':'3306',
     }
+    #}
 }
 
 
