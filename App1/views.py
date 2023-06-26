@@ -4,10 +4,16 @@ from django.http import HttpResponse
 from rest_framework import generics, permissions
 from rest_framework.response import Response
 from knox.models import AuthToken
+<<<<<<< HEAD
 from .serializers import UserSerializer, RegisterSerializer
 import numpy as np
 import joblib 
 
+=======
+from .serializers import UserSerializer, RegisterSerializer, ScoreSerializer
+from knox.auth import TokenAuthentication
+from django.db import transaction
+>>>>>>> 3f793383a0fbee649f316c02a96636d4227ca046
 #fun1 fun2 fun3 fun4 fun 5 fun 6 are just for understanding, they have no use in the actual proj
 
 def fun1(request):
@@ -68,6 +74,7 @@ class LoginAPI(KnoxLoginView):
         login(request, user)
         return super(LoginAPI, self).post(request, format=None)
 
+<<<<<<< HEAD
 ###
 
 def marking(request):
@@ -139,8 +146,20 @@ def marking(request):
 
         elif (keys == 'self_question2'):
             income_group=dict[keys]
+=======
 
+class ScoreCreateView(generics.CreateAPIView):
+    serializer_class = ScoreSerializer
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (permissions.IsAuthenticated,)
+    model_path = 'path_to_your_model_file.joblib'  # Replace with the actual path to your model file
+>>>>>>> 3f793383a0fbee649f316c02a96636d4227ca046
 
+    def _init_(self, *args, **kwargs):
+        super()._init_(*args, **kwargs)
+        #self.model = joblib.load(self.model_path)
+
+<<<<<<< HEAD
 
     introvert = introvert/7  
     sensing = sensing/7 
@@ -232,3 +251,28 @@ def marking(request):
 # #path('scores/', ScoreCreateView.as_view(), name='create-score')
 
 
+=======
+    @transaction.atomic
+    def post(self, request, *args, **kwargs):
+        data = request.data.copy()
+        data['user'] = request.user.id
+
+        serializer = self.get_serializer(data=data)
+        serializer.is_valid(raise_exception=True)
+
+        # Extract the necessary fields for the prediction
+        prediction_data = {
+            'field1': data['field1'],
+            'field2': data['field2'],
+            # Add more fields as needed...
+        }
+
+        # Run the machine learning model to predict the score
+        #score = self.model.predict(prediction_data)
+
+        # Save the score along with the other fields
+        serializer.save(score=100)
+
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=201, headers=headers)
+>>>>>>> 3f793383a0fbee649f316c02a96636d4227ca046
