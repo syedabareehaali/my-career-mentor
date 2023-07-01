@@ -1,6 +1,5 @@
 from rest_framework import serializers
-from django.contrib.auth.models import User
-from .models import Score
+from .models import User, Score
 
 # # User Serializer
 class UserSerializer(serializers.ModelSerializer):
@@ -12,11 +11,17 @@ class UserSerializer(serializers.ModelSerializer):
 class RegisterSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id', 'username', 'email', 'password')
+        fields = ('username', 'email', 'password', 'country', 'city')
         extra_kwargs = {'password': {'write_only': True, 'min_length': 5}}
 
     def create(self, validated_data):
-        return User.objects.create_user(validated_data['username'], validated_data['email'], validated_data['password'])
+        return User.objects.create_user(
+            validated_data['username'], 
+            validated_data['email'], 
+            validated_data['password'],
+            validated_data['country'], 
+            validated_data['city']
+            )
 
 
 class ScoreSerializer(serializers.ModelSerializer):

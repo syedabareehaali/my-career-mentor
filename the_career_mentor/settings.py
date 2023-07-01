@@ -168,3 +168,5 @@ REST_KNOX = {
     'AUTO_REFRESH': False, # This defines if the token expiry time is extended by TOKEN_TTL each time the token is used.
     'EXPIRY_DATETIME_FORMAT': api_settings.DATETIME_FORMAT,
 }
+
+AUTH_USER_MODEL = 'App1.User'
