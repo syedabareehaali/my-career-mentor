@@ -16,7 +16,7 @@
 					"formdata": [
 						{
 							"key": "username",
-							"value": "alam",
+							"value": "me",
 							"type": "text"
 						},
 						{
@@ -27,6 +27,16 @@
 						{
 							"key": "email",
 							"value": "alamfahad13665@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "Karachi",
+							"type": "text"
+						},
+						{
+							"key": "country",
+							"value": "Pakistan",
 							"type": "text"
 						}
 					]
@@ -59,7 +69,7 @@
 							"formdata": [
 								{
 									"key": "username",
-									"value": "alam",
+									"value": "fahad",
 									"type": "text"
 								},
 								{
@@ -70,6 +80,16 @@
 								{
 									"key": "email",
 									"value": "alamfahad13665@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Karachi",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "Pakistan",
 									"type": "text"
 								}
 							]
@@ -94,7 +114,7 @@
 					"_postman_previewlanguage": null,
 					"header": null,
 					"cookie": [],
-					"body": "{\r\n    \"user\": {\r\n        \"id\": 2,\r\n        \"username\": \"alam\",\r\n        \"email\": \"alamfahad13665@gmail.com\"\r\n    },\r\n    \"token\": \"74847649ba1c9981a250de7116a275817266eab810624a22a0b4fbbe377b774f\"\r\n}"
+					"body": "{\r\n    \"user\": {\r\n        \"id\": 3,\r\n        \"username\": \"me\",\r\n        \"email\": \"alamfahad13665@gmail.com\"\r\n    },\r\n    \"token\": \"3ba0637711cd445befc20b1756c9da690105fe7f244a320ae6c65c238bc6c65e\"\r\n}"
 				}
 			]
 		},
@@ -105,7 +125,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"token\": \"b9feea09b6aefbbd26e817dad7c9279673c1460712452074ce1b72ee897cf770\",\r\n    \"username\": \"alam\",\r\n    \"password\": \"qwerty\"\r\n}",
+					"raw": "{\r\n    \"username\": \"me\",\r\n    \"password\": \"qwerty\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -137,7 +157,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"token\": \"b9feea09b6aefbbd26e817dad7c9279673c1460712452074ce1b72ee897cf770\",\r\n    \"username\": \"alam\",\r\n    \"password\": \"qwerty\"\r\n}",
+							"raw": "{\r\n    \"username\": \"me\",\r\n    \"password\": \"qwerty\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -164,24 +184,109 @@
 					"_postman_previewlanguage": null,
 					"header": null,
 					"cookie": [],
-					"body": "{\r\n    \"expiry\": \"2023-06-25T17:17:12.751758Z\",\r\n    \"token\": \"75d0c2091cf7e068f4d44824cda9dbda676e2c8c448429e227b0af9c7ad5a26e\",\r\n    \"user\": {\r\n        \"username\": \"alam\"\r\n    }\r\n}"
+					"body": "{\r\n    \"expiry\": \"2023-07-02T00:08:26.401757Z\",\r\n    \"token\": \"c5c3d7915d643da524b0c0fd24f19c25dc6a1f04c0781ec27977d73a80456cbc\",\r\n    \"user\": {\r\n        \"username\": \"me\"\r\n    }\r\n}"
 				}
 			]
 		},
 		{
-			"name": "Score",
+			"name": "List Score",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
-				"method": "POST",
+				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Token 75d0c2091cf7e068f4d44824cda9dbda676e2c8c448429e227b0af9c7ad5a26e",
+						"value": "Token 790120c3a87ec0e75951a9d4fb999ce5ae154ccf2649b414b7a63de81b215c54",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"field1\": \"f8d71b3cf00752d81a847dbb99153859f8576c74a06ec8a9df681f4518b41ecb\",\r\n    \"field2\": \"alam\",\r\n    \"score\": 100\r\n}",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/getscores/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"getscores",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "List Score",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 790120c3a87ec0e75951a9d4fb999ce5ae154ccf2649b414b7a63de81b215c54",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/getscores/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getscores",
+								""
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "[\r\n    {\r\n        \"id\": 2,\r\n        \"gender\": 1,\r\n        \"income_group\": 2,\r\n        \"sensing\": 3.5,\r\n        \"introvert\": 4.2,\r\n        \"Judging\": 2.8,\r\n        \"Thinking\": 3.9,\r\n        \"logical_intelligence\": 4.6,\r\n        \"Nature_intelligence\": 3.1,\r\n        \"Visual_intelligence\": 2.7,\r\n        \"Musical_intelligence\": 4.9,\r\n        \"Body_intelligence\": 3.8,\r\n        \"Interpersonal_intelligence\": 4.2,\r\n        \"Intrapersonal_intelligence\": 2.3,\r\n        \"Verbal_intelligence\": 4.1,\r\n        \"Existential_intelligence\": 3.7,\r\n        \"Engineering_Field1\": \"Engineering Field 1 Value\",\r\n        \"Engineering_Field2\": \"Engineering Field 2 Value\",\r\n        \"Engineering_Field3\": \"Engineering Field 3 Value\",\r\n        \"Engineering_Field4\": \"Engineering Field 4 Value\",\r\n        \"Engineering_Field5\": \"Engineering Field 5 Value\",\r\n        \"Medical_Field1\": \"Medical Field 1 Value\",\r\n        \"Medical_Field2\": \"Medical Field 2 Value\",\r\n        \"Medical_Field3\": \"Medical Field 3 Value\",\r\n        \"score\": 100.0,\r\n        \"user\": 2\r\n    },\r\n    {\r\n        \"id\": 3,\r\n        \"gender\": 1,\r\n        \"income_group\": 2,\r\n        \"sensing\": 3.5,\r\n        \"introvert\": 4.2,\r\n        \"Judging\": 2.8,\r\n        \"Thinking\": 3.9,\r\n        \"logical_intelligence\": 4.6,\r\n        \"Nature_intelligence\": 3.1,\r\n        \"Visual_intelligence\": 2.7,\r\n        \"Musical_intelligence\": 4.9,\r\n        \"Body_intelligence\": 3.8,\r\n        \"Interpersonal_intelligence\": 4.2,\r\n        \"Intrapersonal_intelligence\": 2.3,\r\n        \"Verbal_intelligence\": 4.1,\r\n        \"Existential_intelligence\": 3.7,\r\n        \"Engineering_Field1\": \"Engineering Field 1 Value\",\r\n        \"Engineering_Field2\": \"Engineering Field 2 Value\",\r\n        \"Engineering_Field3\": \"Engineering Field 3 Value\",\r\n        \"Engineering_Field4\": \"Engineering Field 4 Value\",\r\n        \"Engineering_Field5\": \"Engineering Field 5 Value\",\r\n        \"Medical_Field1\": \"Medical Field 1 Value\",\r\n        \"Medical_Field2\": \"Medical Field 2 Value\",\r\n        \"Medical_Field3\": \"Medical Field 3 Value\",\r\n        \"score\": 100.0,\r\n        \"user\": 2\r\n    }\r\n]"
+				}
+			]
+		},
+		{
+			"name": "Create Score",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 790120c3a87ec0e75951a9d4fb999ce5ae154ccf2649b414b7a63de81b215c54",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"score\": 100\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -207,19 +312,19 @@
 			},
 			"response": [
 				{
-					"name": "Score",
+					"name": "Create Score",
 					"originalRequest": {
 						"method": "POST",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Token 75d0c2091cf7e068f4d44824cda9dbda676e2c8c448429e227b0af9c7ad5a26e",
+								"value": "Token 790120c3a87ec0e75951a9d4fb999ce5ae154ccf2649b414b7a63de81b215c54",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"field1\": \"f8d71b3cf00752d81a847dbb99153859f8576c74a06ec8a9df681f4518b41ecb\",\r\n    \"field2\": \"alam\",\r\n    \"score\": 100\r\n}",
+							"raw": "{\r\n    \"I don't know much about your request fields but I am using an example data in my view. Feel free to change it to accept the request data\" \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -246,7 +351,7 @@
 					"_postman_previewlanguage": null,
 					"header": null,
 					"cookie": [],
-					"body": "{\r\n    \"id\": 1,\r\n    \"field1\": \"f8d71b3cf00752d81a847dbb99153859f8576c74a06ec8a9df681f4518b41ecb\",\r\n    \"field2\": \"alam\",\r\n    \"score\": 100.0,\r\n    \"user\": 2\r\n}"
+					"body": "{\r\n    \"id\": 4,\r\n    \"gender\": 1,\r\n    \"income_group\": 2,\r\n    \"sensing\": 3.5,\r\n    \"introvert\": 4.2,\r\n    \"Judging\": 2.8,\r\n    \"Thinking\": 3.9,\r\n    \"logical_intelligence\": 4.6,\r\n    \"Nature_intelligence\": 3.1,\r\n    \"Visual_intelligence\": 2.7,\r\n    \"Musical_intelligence\": 4.9,\r\n    \"Body_intelligence\": 3.8,\r\n    \"Interpersonal_intelligence\": 4.2,\r\n    \"Intrapersonal_intelligence\": 2.3,\r\n    \"Verbal_intelligence\": 4.1,\r\n    \"Existential_intelligence\": 3.7,\r\n    \"Engineering_Field1\": \"Engineering Field 1 Value\",\r\n    \"Engineering_Field2\": \"Engineering Field 2 Value\",\r\n    \"Engineering_Field3\": \"Engineering Field 3 Value\",\r\n    \"Engineering_Field4\": \"Engineering Field 4 Value\",\r\n    \"Engineering_Field5\": \"Engineering Field 5 Value\",\r\n    \"Medical_Field1\": \"Medical Field 1 Value\",\r\n    \"Medical_Field2\": \"Medical Field 2 Value\",\r\n    \"Medical_Field3\": \"Medical Field 3 Value\",\r\n    \"score\": 100.0,\r\n    \"user\": 2\r\n}"
 				}
 			]
 		}
